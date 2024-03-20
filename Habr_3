@@ -1,0 +1,31 @@
+import java.util.Arrays;
+
+public class Habr_3 {
+    public static void main(String[] args) {
+        int[] array = {4, 3, 2, 1, 2, 3, 4};
+        int delnum = 3;
+
+        int count = 0;
+        for (int num : array) {
+            if (num == delnum) {
+                count++;
+            }
+        }
+
+        int[] result = new int[array.length - count];
+        int index = 0;
+        for (int num : array) {
+            if (num != delnum) {
+                result[index++] = num;
+            }
+        }
+
+        System.out.println("The source array: " + Arrays.toString(array));
+        System.out.println("The number to delete: " + delnum);
+        System.out.println("Array after deletion: " + Arrays.toString(result));
+    }
+}
+
+//Output: The source array: [4, 3, 2, 1, 2, 3, 4]
+The number to delete: 3
+Array after deletion: [4, 2, 1, 2, 4]
